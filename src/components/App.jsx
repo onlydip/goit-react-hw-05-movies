@@ -1,32 +1,31 @@
-import { Routes, Route, Outlet } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Layout } from './Layout/Layout';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-import { Layout } from 'components/Layout/Layout';
-import Loader from 'components/Loader/Loader'; // Додайте компонент лоадера, якщо не маєте його
-
-const Home = lazy(() => import('pages/Home/Home'));
-const Movies = lazy(() => import('pages/Movies/Movies'));
-const MovieDetails = lazy(() => import('pages/MovieDetails/MovieDetails'));
-const NotFoundPage = lazy(() => import('pages/NotFound/NotFound'));
-const Cast = lazy(() => import('components/Cast/Cast'));
-const Reviews = lazy(() => import('components/Reviews/Reviews'));
+const Home = lazy(() => import('../pages/Home/index'));
+const Movies = lazy(() => import('../pages/Movies'));
+const MovieDetails = lazy(() => import('../pages/MovieDetails'));
+const Cast = lazy(() => import('../pages/MovieDetails/Cast'));
+const Reviews = lazy(() => import('../pages/MovieDetails/Reviews'));
+const PageNotFound = lazy(() => import('../pages/NotFound/PageNotFound'));
 
 export const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-
-        <Route path="movies" element={<Movies />}>
-          <Route path=":movieId" element={<MovieDetails />}>
-            <Route index element={<Outlet />} /> {/* Використовуйте Outlet для відображення дочірніх маршрутів */}
-            <Route path="Cast" element={<Cast />} />
-            <Route path="Reviews" element={<Reviews />} />
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="movies" element={<Movies />}></Route>
+          <Route path="/movies/:movieId" element={<MovieDetails />}>
+            <Route path="credits" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>
-
-        <Route path="*" element={<NotFoundPage />} />
-      </Route>
-    </Routes>
+        <Route path="/*" element={<PageNotFound />} />
+      </Routes>
+      <ToastContainer autoClose={3000} />
+    </>
   );
 };
