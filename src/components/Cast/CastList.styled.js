@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled'
 
-export const CreditsList = styled.ul`
+ const CreditsList = styled.ul`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -9,7 +9,7 @@ export const CreditsList = styled.ul`
   margin: -25px;
 `;
 
-export const CreditsItem = styled.li`
+ const CreditsItem = styled.li`
   display: block;
   border-bottom: 1px solid black;
   margin-bottom: 0;
@@ -17,7 +17,7 @@ export const CreditsItem = styled.li`
   margin: 25px;
 `;
 
-export const CreditsImage = styled.img`
+ const CreditsImage = styled.img`
   width: 280px;
   height: auto;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -26,9 +26,11 @@ export const CreditsImage = styled.img`
   }
 `;
 
-export const ActorPlug = styled.img`
+ const ActorPlug = styled.img`
   margin-bottom: 140px;
   width: 280px;
   height: auto;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
+
+export {CreditsList,CreditsItem,CreditsImage,ActorPlug}; 

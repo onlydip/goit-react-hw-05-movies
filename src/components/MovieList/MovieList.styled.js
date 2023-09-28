@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled'
 import { Link } from 'react-router-dom';
 
-export const List = styled.ul`
+ const List = styled.ul`
   display: grid;
   max-width: calc(100vw - 90px);
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -13,12 +13,12 @@ export const List = styled.ul`
   margin-right: auto;
 `;
 
-export const MovieListItem = styled.li`
+ const MovieListItem = styled.li`
   text-decoration: none;
   margin-bottom: 5px;
 `;
 
-export const MovieListLink = styled(Link)`
+ const MovieListLink = styled(Link)`
   text-decoration: none;
   font-size: 18px;
   color: black;
@@ -27,13 +27,13 @@ export const MovieListLink = styled(Link)`
   }
 `;
 
-export const ImgWrapper = styled.div`
+ const ImgWrapper = styled.div`
   max-width: 300px;
   display: flex;
   flex-direction: column;
 `;
 
-export const Poster = styled.img`
+ const Poster = styled.img`
   width: 300px;
   height: 450px;
   object-fit: cover;
@@ -44,14 +44,16 @@ export const Poster = styled.img`
   margin-bottom: 10px;
 `;
 
-export const Title = styled.p`
+ const Title = styled.p`
   margin-right: auto;
   margin-left: auto;
   font-weight: 500;
 `;
 
-export const PosterPlug = styled.img`
+ const PosterPlug = styled.img`
   width: 300px;
   height: 450px;
   margin-bottom: 10px;
 `;
+
+export {List,MovieListItem, MovieListLink, ImgWrapper,Poster,Title,PosterPlug}; 

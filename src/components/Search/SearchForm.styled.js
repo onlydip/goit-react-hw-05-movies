@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled'
 import { Field, Form } from 'formik';
 
-export const StyledForm = styled(Form)`
+ const StyledForm = styled(Form)`
   margin-bottom: 20px;
 `;
 
-export const SearchInput = styled(Field)`
+ const SearchInput = styled(Field)`
   width: 200px;
   font-size: 20px;
   border-radius: 5px;
@@ -18,7 +18,7 @@ export const SearchInput = styled(Field)`
   }
 `;
 
-export const SearchButton = styled.button`
+ const SearchButton = styled.button`
   border: 0.5px solid black;
   border-radius: 5px;
   padding: 5px;
@@ -37,8 +37,10 @@ export const SearchButton = styled.button`
   }
 `;
 
-export const ErrorText = styled.p`
+ const ErrorText = styled.p`
   color: red;
   font-size: 16px;
   padding: 5px;
 `;
+
+export {StyledForm,SearchInput,SearchButton,ErrorText };
