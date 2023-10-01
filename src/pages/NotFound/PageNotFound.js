@@ -5,7 +5,7 @@ const NotFoungPage = styled.div`
   margin-top: 100px;
   display: flex;
   justify-content: center;
-  font-size: 50px;
+  font-size: 70px;
   color: red;
 `;
 

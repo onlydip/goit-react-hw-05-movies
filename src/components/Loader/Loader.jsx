@@ -1,13 +1,13 @@
-import { ThreeDots } from 'react-loader-spinner';
+import { Radio  } from 'react-loader-spinner';
 
 export const Loader = () => {
   return (
     <>
-      <ThreeDots
+      <Radio 
         height="100"
         width="100"
         radius="9"
-        color="blueviolet"
+        colors={['#51E5FF', '#7DE2D1', '#FF7E6B']}
         ariaLabel="three-dots-loading"
         wrapperStyle={{
           display: 'flex',
